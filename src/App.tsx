@@ -18,7 +18,7 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
-import CreateAccount from "./pages/Account/CreateAccount";
+import CreateAccount from "./pages/Account/Account";
 
 export default function App() {
   return (
