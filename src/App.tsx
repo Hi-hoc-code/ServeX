@@ -18,7 +18,7 @@ import Blank from "./pages/Blank";
 import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import Home from "./pages/Dashboard/Home";
-import CreateAccount from "./pages/Account/Account";
+import Account from "./pages/Account/Account";
 
 export default function App() {
   return (
@@ -30,7 +30,7 @@ export default function App() {
           <Route element={<AppLayout />}>
             <Route index path="/" element={<Home />} />
             {/* Account Page */}
-            <Route path="/account/create" element={<CreateAccount />} />
+            <Route path="/account/create" element={<Account />} />
             {/* Others Page */}
             <Route path="/profile" element={<UserProfiles />} />
             <Route path="/calendar" element={<Calendar />} />
@@ -63,7 +63,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-      
+
     </>
   );
 }
