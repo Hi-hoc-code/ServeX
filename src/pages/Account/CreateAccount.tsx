@@ -127,11 +127,7 @@ const CreateAccount: React.FC = () => {
     const formattedDateTime = `${pad(now.getDate())}/${pad(now.getMonth() + 1)}/${now.getFullYear().toString().slice(-2)} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
     return (
         <>
-            <PageMeta
-                title="React.js Form Elements Dashboard | TailAdmin - React.js Admin Dashboard Template"
-                description="This is React.js Form Elements  Dashboard page for TailAdmin - React.js Tailwind CSS Admin Dashboard Template"
-            />
-            <PageBreadcrumb pageTitle="Account" />
+
             <div >
                 <div>
                     <div className="px-8 pt-8 pb-2 flex items-center justify-center">
@@ -141,89 +137,118 @@ const CreateAccount: React.FC = () => {
                         <div className="flex flex-col gap-6">
                             <div>
                                 <div className="flex flex-row items-center gap-4">
-                                    <Label htmlFor="email" className="w-32 text-sm font-medium text-gray-700 dark:text-gray-200">Email</Label>
-                                    <div className="flex-1 relative">
-                                        <Input
-                                            type="text"
-                                            id="email"
-                                            value={form.email}
-                                            onChange={handleChange}
-                                            className={`w-full pr-10 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
-                                                ${isValid.email ? 'border-green-500' : errors.email ? 'border-red-500' : ''}`}
-                                            placeholder="info@gmail.com"
-                                        />
-                                        {isValid.email && (
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <polyline points="6 12 10 16 18 8" stroke="#18C964" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                    <div className="w-full relative group">
+                                        <div className="relative">
+                                            <Input
+                                                type="text"
+                                                id="email"
+                                                value={form.email}
+                                                onChange={handleChange}
+                                                className={`w-full pl-[62px] pr-10 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
+                                                    ${isValid.email ? 'border-green-500' : errors.email ? 'border-red-500' : ''}`}
+                                                placeholder="info@gmail.com"
+                                            />
+                                            <span className="absolute left-0 top-1/2 -translate-y-1/2 border-r border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                                                {/* Envelope icon for email */}
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75l8.25 6.75a2.25 2.25 0 002.75 0l8.25-6.75" />
+                                                    <rect x="2.25" y="6.75" width="19.5" height="10.5" rx="2.25" />
                                                 </svg>
                                             </span>
-                                        )}
+                                            {isValid.email && (
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <polyline points="6 12 10 16 18 8" stroke="#18C964" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
-                                    {(!isValid.email && errors.email) && <p className="w-48 text-sm text-red-600 whitespace-nowrap">{errors.email}</p>}
+                                    {/* {(!isValid.email && errors.email) && <p className="w-48 text-sm text-red-600 whitespace-nowrap">{errors.email}</p>} */}
                                 </div>
                             </div>
                             <div>
                                 <div className="flex flex-row items-center gap-4">
-                                    <Label htmlFor="username" className="w-32 text-sm font-medium text-gray-700 dark:text-gray-200">Username</Label>
-                                    <div className="flex-1 relative">
-                                        <Input
-                                            type="text"
-                                            id="username"
-                                            value={form.username}
-                                            onChange={handleChange}
-                                            className={`w-full pr-10 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
-                                                ${isValid.username ? 'border-green-500' : errors.username ? 'border-red-500' : ''}`}
-                                            placeholder="info_username"
-                                        />
-                                        {isValid.username && (
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <polyline points="6 12 10 16 18 8" stroke="#18C964" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                    <div className="w-full relative group">
+                                        <div className="relative">
+                                            <Input
+                                                type="text"
+                                                id="username"
+                                                value={form.username}
+                                                onChange={handleChange}
+                                                className={`w-full pl-[62px] pr-10 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
+                                                    ${isValid.username ? 'border-green-500' : errors.username ? 'border-red-500' : ''}`}
+                                                placeholder="Username"
+                                            />
+                                            <span className="absolute left-0 top-1/2 -translate-y-1/2 border-r border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                                                {/* User icon for username */}
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                                                 </svg>
                                             </span>
-                                        )}
+                                            {isValid.username && (
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <polyline points="6 12 10 16 18 8" stroke="#18C964" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
-                                    {(!isValid.username && errors.username) && <p className="w-48 text-sm text-red-600 whitespace-nowrap">{errors.username}</p>}
+                                    {/* {(!isValid.username && errors.username) && <p className="w-48 text-sm text-red-600 whitespace-nowrap">{errors.username}</p>} */}
                                 </div>
                             </div>
                             <div>
                                 <div className="flex flex-row items-center gap-4">
-                                    <Label htmlFor="phone" className="w-32 text-sm font-medium text-gray-700 dark:text-gray-200">Phone</Label>
-                                    <div className="flex-1 relative">
-                                        <Input
-                                            type="text"
-                                            id="phone"
-                                            value={form.phone}
-                                            onChange={handleChange}
-                                            className={`w-full pr-10 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
-                                                ${isValid.phone ? 'border-green-500' : errors.phone ? 'border-red-500' : ''}`}
-                                            placeholder="0123456789"
-                                        />
-                                        {isValid.phone && (
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                    <polyline points="6 12 10 16 18 8" stroke="#18C964" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                    <div className="w-full relative group">
+                                        <div className="relative">
+                                            <Input
+                                                type="text"
+                                                id="phone"
+                                                value={form.phone}
+                                                onChange={handleChange}
+                                                className={`w-full pl-[62px] pr-10 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
+                                                    ${isValid.phone ? 'border-green-500' : errors.phone ? 'border-red-500' : ''}`}
+                                                placeholder="Phone"
+                                            />
+                                            <span className="absolute left-0 top-1/2 -translate-y-1/2 border-r border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                                                {/* Phone icon for phone */}
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M2 7.5C2 6.12 3.12 5 4.5 5h15c1.38 0 2.5 1.12 2.5 2.5v10c0 1.38-1.12 2.5-2.5 2.5h-15C3.12 20 2 18.88 2 17.5v-10zm3.5 0v.25l7.5 5.75 7.5-5.75V7.5" />
                                                 </svg>
                                             </span>
-                                        )}
+                                            {isValid.phone && (
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <polyline points="6 12 10 16 18 8" stroke="#18C964" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
-                                    {(!isValid.phone && errors.phone) && <p className="w-48 text-sm text-red-600 whitespace-nowrap">{errors.phone}</p>}
+                                    {/* {(!isValid.phone && errors.phone) && <p className="w-48 text-sm text-red-600 whitespace-nowrap">{errors.phone}</p>} */}
                                 </div>
                             </div>
                             <div>
-                                <Label className="text-sm font-medium text-gray-700 dark:text-gray-200">Password</Label>
-                                <div className="relative mt-2">
+                                <div className="relative">
                                     <div className="relative">
                                         <Input
                                             type={showPassword ? "text" : "password"}
                                             id="password"
                                             value={form.password}
                                             onChange={handleChange}
-                                            placeholder="Abc@1234567"
-                                            className={`w-full pr-10 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
+                                            placeholder="Password"
+                                            className={`w-full pl-[62px] pr-10 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 transition-all
                                                 ${isValid.password ? 'border-green-500' : errors.password ? 'border-red-500' : ''}`}
                                         />
+                                        <span className="absolute left-0 top-1/2 -translate-y-1/2 border-r border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                                            {/* Lock icon for password/confirm password */}
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                                <rect x="6" y="10" width="12" height="8" rx="2" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 14v2" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M8 10V8a4 4 0 018 0v2" />
+                                            </svg>
+                                        </span>
                                         <button
                                             type="button"
                                             onClick={() => setShowPassword(!showPassword)}
@@ -238,26 +263,27 @@ const CreateAccount: React.FC = () => {
                                     </div>
 
                                 </div>
-                                {/* <div className="mt-2 text-xs text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-dark-800 rounded px-3 py-2 border border-gray-200 dark:border-dark-700">
-                                    <span className="font-semibold">Example:</span> Abc@1234567
-                                    <br />
-                                    <span>Password must be at least 10 characters and contain uppercase, lowercase, number, and special character.</span>
-                                </div> */}
-                                {(!isValid.password && errors.password) && <p className="mt-2 text-sm text-red-600">{errors.password}</p>}
+
+                                {/* {(!isValid.password && errors.password) && <p className="mt-2 text-sm text-red-600">{errors.password}</p>} */}
                             </div>
                             <div>
-                                <Label className="text-sm font-medium text-gray-700 dark:text-gray-200">Confirm Password</Label>
-                                <div className="relative mt-2">
+                                <div className="relative">
                                     <div className="relative">
                                         <Input
                                             type={showPassword ? "text" : "password"}
                                             id="confirmPassword"
                                             value={form.confirmPassword}
                                             onChange={handleChange}
-                                            placeholder="Abc@1234567"
-                                            className={`w-full pr-10 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all
+                                            placeholder="Confirm Password"
+                                            className={`w-full pl-[62px] pr-10 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 rounded-lg border border-gray-300 dark:border-dark-700 bg-gray-50 dark:bg-dark-800 transition-all
                                                 ${isValid.confirmPassword ? 'border-green-500' : errors.confirmPassword ? 'border-red-500' : ''}`}
                                         />
+                                        <span className="absolute left-0 top-1/2 -translate-y-1/2 border-r border-gray-200 px-3.5 py-3 text-gray-500 dark:border-gray-800 dark:text-gray-400">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" />
+                                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0 7.5-15 7.5-15 0a7.5 7.5 0 1115 0z" />
+                                            </svg>
+                                        </span>
                                         <button
                                             type="button"
                                             onClick={() => setShowPassword(!showPassword)}
@@ -272,7 +298,7 @@ const CreateAccount: React.FC = () => {
                                     </div>
 
                                 </div>
-                                {(!isValid.confirmPassword && errors.confirmPassword) && <p className="mt-2 text-sm text-red-600">{errors.confirmPassword}</p>}
+                                {/* {(!isValid.confirmPassword && errors.confirmPassword) && <p className="mt-2 text-sm text-red-600">{errors.confirmPassword}</p>} */}
                             </div>
                             <div>
                                 <Label className="text-sm font-medium text-gray-700 dark:text-gray-200 mb-2 block">Status</Label>
@@ -305,18 +331,7 @@ const CreateAccount: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        {warning && (
-                            <div className="mb-4 flex items-center gap-2 px-4 py-3 rounded bg-yellow-100 text-yellow-800 border border-yellow-300">
-                                <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M21 12A9 9 0 113 12a9 9 0 0118 0z" /></svg>
-                                <span>{warning}</span>
-                            </div>
-                        )}
-                        {success && (
-                            <div className="mb-4 flex items-center gap-2 px-4 py-3 rounded bg-green-100 text-green-800 border border-green-300">
-                                <svg className="w-5 h-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                <span>{success}</span>
-                            </div>
-                        )}
+
                         <button
                             type="submit"
                             className="w-full inline-flex items-center justify-center gap-2 rounded-lg transition px-4 py-3 text-base font-semibold bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-lg hover:scale-[1.02] hover:shadow-xl active:scale-100 disabled:bg-brand-300 mt-8"
